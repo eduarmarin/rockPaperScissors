@@ -1,41 +1,119 @@
+var counter = [];
+//document.getElementById("round").innerHTML = "Wins how get the highest score in 5 roounds"; 
+var a=0;
 
 function playerSelection1 () {
-      var1 = "Rock";
-      console.log('gamer ' + var1);
-      playerSelection();
+      varGm = "Rock";
+      playRound();
     } 
 function playerSelection2 () {
-      var1 = "Papper";
-      console.log('gamer ' + var1);
-      playerSelection();
+      varGm = "Papper";
+      playRound();
     } 
 function playerSelection3 () {
-      var1 = "Scissors";
-      console.log('gamer ' + var1);
-      playerSelection();
+      varGm = "Scissors";
+      playRound();
     } 
 
-function playerSelection() {
-    var varPc = getComputerChoice();
-    //console.log(varPc);
-    console.log('pc 1 ' + varPc);
+function playRound() {
+
+    var varPc = getComputerChoice(); //get the pc choice for the game round
+    console.log('gamer: ' + varGm +', pc: ' + varPc);
     document.getElementById("pc").innerHTML = varPc;
-    document.getElementById("gamer").innerHTML = var1;
+    document.getElementById("gamer").innerHTML = varGm;
+ 
+      if (varPc==="Rock" && varGm==="Scissors"){  //winner options star
+        var varRound = "You lose";
+        console.log("You lose");
+        document.getElementById("round").innerHTML = varRound; 
+      }
+      if (varPc==="Rock" && varGm==="Papper"){
+        varRound = "Pc loses";
+        console.log("Pc Loses");
+        document.getElementById("round").innerHTML = varRound; 
+      }
+      if (varPc==="Papper" && varGm==="Scissors"){
+        varRound = "Pc loses";
+        console.log("Pc loses");
+        document.getElementById("round").innerHTML = varRound; 
+      }
+      if (varPc==="Papper" && varGm==="Rock"){
+        varRound = "You lose";
+        console.log("You lose");
+        document.getElementById("round").innerHTML = varRound; 
+      }
+      if (varPc==="Scissors" && varGm==="Rock"){
+        varRound = "Pc loses";
+        console.log("Pc loses");
+        document.getElementById("round").innerHTML = varRound; 
+      }
+      if (varPc==="Scissors" && varGm==="Papper"){ 
+        varRound = "You lose";
+        console.log("You lose");
+        document.getElementById("round").innerHTML = varRound; 
+      }  
+      if (varGm === varPc) {               //winner options end
+        varRound = "Tied";
+        console.log("Tied");
+        document.getElementById("round").innerHTML = varRound; 
+        //var winner = 
+      } 
+
+    counter.push(varRound);  // round counter section using a arrays adding new item
+    console.log('Counter ' + counter.length);
+    console.log(counter);
+    
+    if ((counter.length % 5) === 0) {
+      var a=0, b=0, c=0;
+      for(let i=0; i<5; i++){ // this for count how much 
+         if(counter[i]==="Tied"){
+          a = a+1 ;
+          //console.log("var a " +a);
+         }
+         if(counter[i]==="You lose"){
+          b = b+1;
+          //console.log("var b "+b);
+         }
+         if(counter[i]==="Pc loses"){
+          c = c+1 ;
+          //console.log("var c "+c);
+         } 
+      console.log("Again and again " +a +', ' +b +', '+c); 
+      }
+
+      if(a === 5){
+        varRound="Nobody wins";
+      }
+      if(b === c){
+        console.log("tied as well");
+      }
+      if(c > b){
+        varRound="Gamer wins";
+        var winCounter=counter.indexOf("Pc lose");
+      }
+      if(b > c){
+        varRound="Pc wins";
+        winCounter=counter.indexOf("You lose");
+      }
+      console.log("fifth round");
+      document.getElementById("round").innerHTML = "Fifth round, " +varRound +" "  +" the Game"; 
+      counter.length = 0;//array to cero agains
+    }                    // round counter section end   
   }
 
 function getComputerChoice() {
-    var var2= getRandom(); 
-    console.log(var2);
-    if (var2<33) {
-      //console.log('smaller than rock');
-      return ("rock"); // choose Rock
+    var varCt= getRandom(); 
+    //console.log(var2);
+    if (varCt<33) {
+      //console.log('smaller than 33 rock');
+      return ("Rock"); // choose Rock
     } else {
-        if (var2>66){
-          //console.log('greater than papper');
+        if (varCt>66){
+          //console.log('greater than 66 papper');
           return ("Papper"); // choose Papper
         } else {          
             //console.log('between scissors');
-            return ("Scissor"); // choose Scissor 
+            return ("Scissors"); // choose Scissor 
           }
       } 
   }    
@@ -44,78 +122,3 @@ function getRandom() {
   return random1;
 }
 
-
-/*    
-function add7 () {
-    var var1 = document.getElementById("name1").value;
-    var var2 = document.getElementById("name2").value;
-    
-    if ( isNaN(var1) || isNaN(var2)  === true) {  //isNaN return false if var1 a number 
-        alert('first or second number is char');
-    }
-    else{
-        if (isNaN(var1)  === false)
-        alert("any number return 7 as result");
-    }
-
-    var1 = parseInt(var1); // turn into a int
-    var2 = parseInt(var2);
-    var d = var1 + var2;
-    var c = 8;
-    
-    console.log('valor de var1 ' + var1);
-    document.getElementById("demo").innerHTML = d;
-}
-
-    var1 = parseInt(var1); // turn into a int
-    var2 = parseInt(var2);
-    var d = var1 + var2;
-    var c = 8;
-    
-    console.log('valor de var1 ' + var1);
-    document.getElementById("gamer").innerHTML = var1;
-
-function capi() {
-    var var3 = document.getElementById("word").value;
-    console.log("The word is: " + var3)
-
-    var3 = var3.charAt(0).toUpperCase() + var3.slice(1); //take the first letter, capitalized it, take the rest of the char and link everything
-    var lastL = var3.slice(-1); // take the last letter
-
-    console.log("First letter capitalized: " + var3);
-    console.log("Last letter: " + lastL);
-    document.getElementById("letter").innerHTML = var3;
-    document.getElementById("lastletter").innerHTML = lastL;
-}
-
-function fizzBuzz() {
-    var varFb = parseInt(document.getElementById("numberFb").value);
-    console.log("Number " + varFb)
-    //if ( isNaN(varFb)  === false) {  //isNaN return false if var1 is a number 
-    //    alert('is a number');
-    //}
-    var arrayFb = new Array();
-    arrayFb [0] = "0";
-    for (let i = 1; i <= varFb; i++) {
-        if (i % 3 === 0 && i % 5 === 0) {
-            console.log("FizzBuzz");
-            document.getElementById("resultFizzBuzz").innerHTML = "FizzBuzz";
-            arrayFb [i]= " FizzBuzz";
-          } else if (i % 3 === 0) {
-            console.log("Fizz");
-            document.getElementById("resultFizzBuzz").innerHTML = "Fizz";
-            arrayFb [i]= " Fizz";
-          } else if (i % 5 === 0) {
-            console.log("Buzz");
-            document.getElementById("resultFizzBuzz").innerHTML = "Buzz";
-            arrayFb [i]= " Buzz";
-          } else {
-            console.log(i);
-            document.getElementById("resultFizzBuzz").innerHTML = + i;
-            arrayFb [i]=" "+i;
-          }
-          //console.log(arrayFb);  
-          document.getElementById("resultFizzBuzz").innerHTML = arrayFb;
-      }
-
-} */

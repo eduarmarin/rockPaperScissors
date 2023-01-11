@@ -1,4 +1,86 @@
 .rockpapperscissors{
-    background-color: rgb(165, 163, 163);
-    padding: 16px;
+    border-radius: 10px;
+    background-color: rgb(202, 177, 177);
+    padding: 4px;
+    width: 85vw;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 5ex;
+    background-color: gold;
+    border: 2px solid firebrick;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: small;
+    color: black;
+    cursor: pointer;
+}
+.score{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.gamerscore{
+    width: 80px;
+    padding-right: 4px;
+    background-color: gold;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    border: 2px solid firebrick;
+    border-radius: 10px;
+    font-weight: bold;
+}
+.pcscore{
+    width: 80px;
+    padding-left: 4px;
+    background-color: gold;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border: 2px solid firebrick;
+    border-radius: 10px;
+    font-weight: bold;
+}
+#playerSelection1.blue{
+    background-color: blue;
+}
+#playerSelection2.blue {
+    background-color: blue;
+}
+#playerSelection3.blue {
+    background-color: blue;
+}
+
+.button:hover,
+#playerSelection1.blue:hover,
+#playerSelection2.blue:hover,
+#playerSelection3.blue:hover{
+    background-color: red;
+}
+
+#gamer{
+    background-color: gold;
+    border: 2px solid firebrick;    
+    padding: 3px;
+    border-radius: 5px;
+
+}
+#pc{
+    background-color: gold;
+    border: 2px solid firebrick;
+    padding: 3px;
+    border-radius: 5px;
+
 }

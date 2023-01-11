@@ -11,22 +11,27 @@
 
   </head>
   <body>
-
+    <center> 
     <div class="rockpapperscissors">   
-      <center> 
-        <p> Rock Papper or Scissors</p>
-      </center>
-      <!--<p>First number:</p>
-      <input type="text" id="name1"/>
-      <br/> -->
-      <button type="button" class = "buttons" onclick="playerSelection1()" id="playerSelection1"> Rock </button>
-      <button type="button" class = "buttons" onclick="playerSelection2()" id="playerSelection2"> Papper </button>
-      <button type="button" class = "buttons" onclick="playerSelection3()" id="playerSelection3"> Scissors </button>
+    
+      <h3> Rock Papper or Scissors</h3>
       <br/>
-      <p>Gamer Choise: <span id="gamer"></p>
-      <p>PC Choise: <span id="pc"></p>
-      <p><span id="round"></p> 
+      <div class="buttons">   
+          <button class="button" type="button" onclick="playerSelection1()" id="playerSelection1"> Rock </button>
+          <button class="button" type="button" onclick="playerSelection2()" id="playerSelection2"> Papper </button>
+          <button class="button" type="button" onclick="playerSelection3()" id="playerSelection3"> Scissors </button>
+      </div>
+      <br/>
+      <div class="score">
+          <div class="gamerscore">
+              <p>Gamer <span id="gamer">0</span></p> 
+          </div>  
+          <div class="pcscore">  
+              <p><span id="pc">0</span> PC</p>
+          </div>  
+      </div>
+      <p><span id="round">Wins how get the highest score in 5 rounds</p> 
     </div>
-
+    </center>
    </body>
 </html>

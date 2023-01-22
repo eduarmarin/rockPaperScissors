@@ -73,22 +73,19 @@ function playRound() {
    document.getElementById("gamer").innerHTML = c;
     
     if ((counter.length % 5) === 0) {
-      if(a === 5){         //this one gets the winner
-        varRound="Nobody wins";
-      }
       if(b === c){
         console.log("Game tied");
       }
       if(c > b){
         varRound="Gamer wins";
-        //var winCounter=counter.indexOf("Pc lose");
       }
       if(b > c){
         varRound="Pc wins";
-        //winCounter=counter.indexOf("You lose");
       }
-      //console.log("fifth round");
-      document.getElementById("round").innerHTML = "Fifth round, " +varRound +" the Game"+"<br>"+"<br>"+"Game stars again, wins how get the highest score in 5 roounds"; 
+      if(a === 5){ 
+        varRound="Nobody wins";
+      }
+      document.getElementById("round").innerHTML = "Fifth round, " +varRound +" the Game"+"<br>"+"<br>"+"Start again, wins the highest score in 5 rounds"; 
       counter.length = 0;//array to cero again
     }                    // round counter section end   
   }
@@ -97,15 +94,18 @@ function getComputerChoice() {
     var varCt= getRandom(); 
     //console.log(var2);
     if (varCt<33) {
-      //console.log('smaller than 33 rock');
+      removeBluePc();
+      document.getElementById("pcrock").classList.add("blue");
       return ("Rock"); // choose Rock
     } else {
         if (varCt>66){
-          //console.log('greater than 66 papper');
+          removeBluePc();
+          document.getElementById("pcpapper").classList.add("blue");
           return ("Papper"); // choose Papper
         } else {          
-            //console.log('between scissors');
-            return ("Scissors"); // choose Scissor 
+            removeBluePc();
+            document.getElementById("pcscissor").classList.add("blue");
+            return ("Scissors"); // choose Scissor             
           }
       } 
   }    
@@ -117,4 +117,9 @@ function removeBlue() {
   document.getElementById("playerSelection1").classList.remove("blue");
   document.getElementById("playerSelection2").classList.remove("blue");
   document.getElementById("playerSelection3").classList.remove("blue");
+}
+function removeBluePc() {
+  document.getElementById("pcrock").classList.remove("blue");
+  document.getElementById("pcpapper").classList.remove("blue");
+  document.getElementById("pcscissor").classList.remove("blue");
 }

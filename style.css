@@ -5,7 +5,8 @@
     width: 85vw;
 }
 
-.buttons{
+.buttons,
+.pcbuttons {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -15,71 +16,107 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 64px;
-    height: 5ex;
-    background-color: gold;
-    border: 2px solid firebrick;
+    width: 80px;
+    height: 10ex;
+    background-color: lightskyblue;
+    border: 2px solid lightcoral;
     border-radius: 10px;
     font-weight: bold;
-    font-size: small;
+    font-size: medium;
     color: black;
     cursor: pointer;
+    margin-bottom: 4px;
 }
-.score{
+.pcbutton{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 10ex;
+    background-color: lightgrey;
+    border: 2px solid gray;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: medium;
+    color: black;
+    cursor: pointer;
+    margin-bottom: 4px;
+}
+.score{ /* this one contain pcscore and gamerscore*/
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
 }
-.gamerscore{
-    width: 80px;
-    padding-right: 4px;
-    background-color: gold;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    border: 2px solid firebrick;
-    border-radius: 10px;
-    font-weight: bold;
-}
-.pcscore{
-    width: 80px;
-    padding-left: 4px;
-    background-color: gold;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    border: 2px solid firebrick;
-    border-radius: 10px;
-    font-weight: bold;
-}
-#playerSelection1.blue{
-    background-color: blue;
+#playerSelection1.blue { 
+    background-color:  rgb(74, 74, 206);
 }
 #playerSelection2.blue {
-    background-color: blue;
+    background-color:  rgb(74, 74, 206);
 }
 #playerSelection3.blue {
-    background-color: blue;
+    background-color:  rgb(74, 74, 206);
 }
-
+#pcrock.blue{
+    background-color: rgba(245, 25, 25, 0.89);
+}
+#pcpapper.blue{
+    background-color: rgba(245, 25, 25, 0.89);
+}
+#pcscissor.blue{
+    background-color: rgba(245, 25, 25, 0.89);
+}
+.pcbutton:hover,
+#pcrock.blue:hover,
+#pcpapper.blue:hover,
+#pcscissor.blue:hover{
+    background-color: rgba(245, 25, 25, 0.89);
+}
 .button:hover,
 #playerSelection1.blue:hover,
 #playerSelection2.blue:hover,
 #playerSelection3.blue:hover{
-    background-color: red;
+    background-color: rgb(74, 74, 206);
+}
+.gamerscore{
+    width: 80px;
+    padding-right: 4px;
+    /*background-color: gold;*/
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    /*border: 2px solid firebrick;*/
+    border-radius: 15px;
+    font-weight: bold;
+    background-color: lightskyblue;
+    border: 2px solid lightcoral;
+    padding: 3px;
+}
+.pcscore{
+    width: 80px;
+    padding-left: 4px;
+    /*background-color: gold;*/
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    /*border: 2px solid firebrick;*/
+    border-radius: 15px;
+    font-weight: bold;
+    background-color: lightgrey;
+    border: 2px solid gray;
+    padding: 3px;
 }
 
 #gamer{
-    background-color: gold;
-    border: 2px solid firebrick;    
+    background-color: lightskyblue;
+    border: 2px solid lightcoral;
     padding: 3px;
     border-radius: 5px;
 
 }
 #pc{
-    background-color: gold;
-    border: 2px solid firebrick;
+    background-color: lightgrey;
+    border: 2px solid gray;
     padding: 3px;
     border-radius: 5px;
 
